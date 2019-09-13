@@ -11,6 +11,6 @@ deploy:
       -H "Travis-API-Version: 3" \
       -H "Authorization: token $TRAVIS_TOKEN" \
       -d '{"request": {"branch":"build"}}' \
-      https://api.travis-ci.com/repo/ManageIQ%2Fmanageiq.github.io/requests
+      https://api.travis-ci.org/repo/ManageIQ%2Fmanageiq.github.io/requests
   on:
     branch: master
