@@ -4,13 +4,6 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: |-
-    curl -s -X POST \
-      -H "Content-Type: application/json" \
-      -H "Accept: application/json" \
-      -H "Travis-API-Version: 3" \
-      -H "Authorization: token $TRAVIS_TOKEN" \
-      -d '{"request": {"branch":"build"}}' \
-      https://api.travis-ci.org/repo/ManageIQ%2Fmanageiq.github.io/requests
+  script: curl -sSL https://raw.githubusercontent.com/Fryguy/travis-trigger-example/master/trigger.sh | bash -s
   on:
     branch: master
